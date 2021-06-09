@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </table>
+            <h1>h1</h1>
+            <h5>h5</h5>
+            <script src="./js/jquery-3.6.0.js"></script>
+            <script>
+                $('td:eq(0)').css('background', 'cadetblue'); // 第1個 從0開始算
+                $('td:eq(5)').css('background', 'burlywood'); // 第6個
+                $('td:eq(24)').css('background', 'cornflowerblue'); //第24個
+                // $('td:last').css('background', 'red'); // 最後一個
+                // $('td:even').css('background', 'brown'); // 偶數
+                $('td:gt(19)').css('background', 'cornflowerblue'); // 大於19
+                $('td:lt(3)').css('background', 'brown'); // 小於3
+                $(':header').css('color', 'cadetblue'); // h1~h6
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>child filter</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 20px;
+            background-color: peru;
+            margin: 10px 0;
+            /* color: olive; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <span>123</span>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+    </div>
+    <div class="wrap">
+        <span>456</span>
+    </div>
+    <span>666</span>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.box:first-child').css('background', 'cornflowerblue');
+        $('.box:last-child').css('background', 'cadetblue');
+        $('span:first-of-type').css('color', 'cadetblue');
+        $('span:last-of-type').css('color', 'brown');
+        $('.box:nth-child(2)').css('background', 'cadetblue'); // 從1開始算
+        $('.box:nth-child(5)').css('background', 'cadetblue');
+        $('.box:nth-last-child(2)').css('background', 'burlywood');
+        $('.box:nth-of-type(1)').css('background', 'khaki');
+        $('span:only-child').css('color', 'khaki');
+        $('span:only-of-type').css('color', 'olive');
+    </script>
+</body>
+
+</html>
