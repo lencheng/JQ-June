@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <ul class="col-12">
+                <li>點擊照片只有自己有外框，其他照片無外框效果</li>
+            </ul>
+            <div class="col"><img src="./img/img1.jpg" alt=""></div>
+            <div class="col"><img src="./img/img2.jpg" alt=""></div>
+            <div class="col"><img src="./img/img3.jpg" alt=""></div>
+            <div class="col"><img src="./img/img4.jpg" alt=""></div>
+            <div class="col"><img src="./img/img5.jpg" alt=""></div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('img').click(function() {
+            $(this)
+                .closest('.col')
+                .siblings()
+                .find('img')
+                .css('border', '0px solid transparent')
+                .end()
+                .end()
+                .end()
+                .css('border', '10px solid pink');
+
+        });
+    </script>
+</body>
+
+</html>
