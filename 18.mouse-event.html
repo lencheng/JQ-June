@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <button class="btn btn-info">button</button>
+        </div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.btn').click(function() {
+            console.log('click');
+        });
+
+        $('.btn').dblclick(function() {
+            console.log('dblclick');
+        });
+
+        $('.btn').contextmenu(function() {
+            console.log('contextmenu');
+        });
+
+        $('.btn').mousedown(function() {
+            console.log('mousedown');
+        });
+
+        $('.btn').mouseup(function() {
+            console.log('mouseup');
+        });
+
+        $('.btn').mouseenter(function() {
+            console.log('mouseenter');
+        });
+
+        $('.btn').mouseleave(function() {
+            console.log('mouseleave');
+        });
+
+        $('.btn').hover(function() {
+            console.log('hover in');
+            $(this).css('background', 'brown');
+        }, function() {
+            console.log('hover out');
+            $(this).css('background', '');
+        });
+        // hover 用2個 function 隔開, 
+        // 第1個function(hover in) 等於 mouseenter 
+        // 第1個function(hover out) 等於 mouseleave
+        // 可以拆成mouseenter/mouseleave 也可以單純用hover就好
+    </script>
+</body>
+
+</html>

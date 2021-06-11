@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable</title>
+</head>
+
+<body>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // Hosit 提升 只有var會
+        // 因為順序很重要, 所以ES6必須先宣告, 才能使用這個變數
+        console.log(x); //undefined
+        // console.log(a); //Uncaught ReferenceError: Cannot access 'a' before initialization
+
+        // ES5 變數宣告用var
+        var x = 10;
+        var y = 20;
+
+        // ES6 變數宣告從var 
+        // 分解成 
+        // 1. let 
+        // 2. const
+        let a = 10;
+        const b = 20;
+
+        // let (可重新賦值) VS const (不可重新賦值)
+        a = 11;
+        // b = 21; // Uncaught TypeError: Assignment to constant variable.
+
+        // JavaScript 是一種弱型態語言
+        // 簡單的資料型態有：
+        // 1. 字串
+        // 2. 數字
+        // 3. 布林值(true/false)
+
+        // 寫程式時, 害怕型態被改變造成bug, 這種情況使用const
+        // 若變數會需要重新賦值, 這種情況使用let
+        // 大部分先使用const
+
+        // 還有2種常見的資料型態
+        // 陣列 Array、物件 Object
+    </script>
+</body>
+
+</html>

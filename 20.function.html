@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // 函式的名字abc
+        function abc() {
+            console.log('abc');
+        }
+
+        abc(); // 呼叫並執行函式
+
+        // 匿名函式
+        (function() {
+            console.log('no name');
+        })(); // 原地直接呼叫
+        // 通常用在只執行一次, 且會立即執行(後面的小括號)
+
+        // ES6 宣告函式的方式改變, 用const去宣告匿名函式
+        const def = function() {
+            console.log('def');
+        }
+
+        def();
+
+        // function後面的小括號
+        // 小括號裡面可以用來傳遞參數, 不傳值則直接留空白就好
+        function myFunction(a, b) {
+            console.log(a, b);
+        }
+
+        myFunction(12345, '23456');
+
+        function add(a, b) {
+            console.log(a + b);
+        }
+
+        add(123, 456);
+        add(12345, 67890);
+
+        function subtract(a, b) {
+            console.log(a - b);
+        }
+
+        subtract(987, 654);
+        subtract(9876, 5432);
+
+        function multiply(a, b) {
+            console.log(a * b);
+        }
+
+        multiply(12, 34);
+        multiply(123, 456);
+
+        function divide(a, b) {
+            console.log(a / b);
+        }
+
+        divide(100, 4);
+        divide(100, 2);
+
+        function returnAddResult(a, b) {
+            return (a + b);
+        }
+
+        // return 把值計算後回傳
+        // 在JS裡, 命名通常用小駝峰, 開頭小寫, 其餘單字開頭大寫
+        const myResult = returnAddResult(2, 3);
+        console.log(myResult);
+        const myResult2 = returnAddResult(3, 4);
+        console.log(myResult2);
+        console.log(myResult + myResult2);
+
+        // ES6 箭頭函式
+        // ()=> 來表示 function 的簡稱
+        // JQuery 不接受 箭頭函式 的寫法
+
+        function normalFunc1() {
+            console.log('normalFunc1');
+        }
+
+        const normalFunc2 = function() {
+            console.log('normalFunc2');
+        }
+
+        const arrowFunc = () => {
+            console.log('arrowFunc');
+        }
+
+        normalFunc1();
+        normalFunc2();
+        arrowFunc();
+
+        // 箭頭函式的 return, 若只有一行, 可以省略
+        const myAdd = (a, b) => a + b;
+
+        const myResult3 = myAdd(10, 20);
+        console.log('myResult3');
+
+        // 箭頭函式只有一個參數, 小括號可以省略
+        const logMyString = str => console.log('333');
+        logMyString();
+    </script>
+</body>
+
+</html>
