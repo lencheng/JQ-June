@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex5</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <style>
         .wrap {
             width: 700px;
@@ -23,7 +25,7 @@
             width: 3500px;
             height: 100%;
             overflow: hidden;
-            transform: translateX(-40%);
+            transform: translateX(0);
             transition: 0.5s;
         }
         
@@ -47,12 +49,37 @@
         }
         
         .slider-dots li {
-            width: 60px;
-            height: 10px;
+            width: 40px;
+            height: 6px;
             background: rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
+            border-radius: 3px;
             /* border: 2px solid rgb(255, 255, 255, 0.9); */
             margin: 0 12px;
+        }
+        
+        .left-arrow-area,
+        .right-arrow-area {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            background-color: rgba(255, 255, 255, 0.5);
+            /* opacity: .5; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .left-arrow-area {
+            left: 0;
+        }
+        
+        .right-arrow-area {
+            right: 0;
+        }
+        
+        .fas {
+            color: rgba(255, 255, 255, 0.9);
         }
     </style>
 </head>
@@ -75,23 +102,25 @@
                     <li></li>
                     <li></li>
                 </ul>
+                <div class="left-arrow-area">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="right-arrow-area">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
         </div>
-        <!-- <div class="row">
-            <button class="btn btn-light mr-1"></button>
-            <button class="btn btn-light mr-1"></button>
-            <button class="btn btn-light mr-1"></button>
-            <button class="btn btn-light mr-1"></button>
-            <button class="btn btn-light"></button>
-        </div> -->
+
     </div>
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
+        let nowPage = 0;
         $('.slider-dots li').click(function() {
             // console.log('hi');
             // console.log('li index:', $(this).index() * -700 + 'px');
-            const positionX = $(this).index() * -700 + 'px';
-            console.log(positionX);
+            nowPage = $(this).index();
+            // const positionX = $(this).index() * -700 + 'px';
+            // console.log(positionX);
             // 確認positionX的值
             $(this)
                 .css('background', 'rgba(255, 255, 255, 0.9)')
@@ -105,9 +134,49 @@
             // ES6 樣板字串
             // 1.把字串原本的單引號(或雙引號) 改成使用反引號(`)
             // 2.把我們想要把我們想要放變數的地方 用${}
-            $('.img-wrap')
-                .css('transform', `translateX(${positionX})`)
+            // $('.img-wrap')
+            //     .css('transform', `translateX(${positionX})`)
+            changePage();
         })
+        $('.left-arrow-area').click(function() {
+            // if (nowPage > 0) {
+            //     nowPage = nowPage - 1;
+            // } else if (nowPage == 0) {
+            //     nowPage = 4;
+            // }
+            if (nowPage == 0) return;
+
+            nowPage = nowPage - 1
+
+            // console.log(nowPage);
+            // const positionX = nowPage * -700;
+            // $('.img-wrap')
+            //     .css('transform', `translateX(${positionX}px)`)
+            changePage();
+        })
+        $('.right-arrow-area').click(function() {
+            // if (nowPage < 4) {
+            //     nowPage = nowPage + 1;
+            // } else if (nowPage == 4) {
+            //     nowPage = 0;
+            // }
+            if (nowPage == 4) return;
+
+            nowPage = nowPage + 1;
+
+            // console.log(nowPage);
+            // const positionX = nowPage * -700;
+            // $('.img-wrap')
+            //     .css('transform', `translateX(${positionX}px)`)
+            changePage();
+        })
+
+        function changePage() {
+            // console.log(nowPage);
+            const positionX = nowPage * -700;
+            $('.img-wrap')
+                .css('transform', `translateX(${positionX}px)`)
+        }
     </script>
 </body>
 
