@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck">
-                    <label class="form-check-label" for="exampleCheck">Check me out</label>
+                    <label class="form-check-label" for="exampleCheck">Check me out to see password</label>
                 </div>
                 <button type="button" class="btn btn-info auto-input">Auto input</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -50,6 +50,13 @@
             $('#exampleInputEmail').val('leo@gmail.com');
             $('#exampleInputPassword').val('12345678');
         });
+        $('#exampleCheck').click(function() {
+            if ($(this).prop('checked')) {
+                $('#exampleInputPassword').attr('type', 'text');
+            } else {
+                $('#exampleInputPassword').attr('type', 'password');
+            }
+        })
     </script>
 </body>
 
