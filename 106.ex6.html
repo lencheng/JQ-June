@@ -48,9 +48,9 @@
             // console.log('hi', $(this).val());
 
             // 2. 我們需要取得這個city區域的資料
-            const cityVal = $(this).val();
+            // const cityVal = $(this).val();
             // console.log(districtArray[cityVal]);
-            const districtData = districtArray[cityVal];
+            const districtData = districtArray[$(this).val()];
 
             // 3. 利用迴圈去改第二個select的option
             // 先去選取DOM有幾個 再改資料
