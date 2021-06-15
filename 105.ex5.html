@@ -8,7 +8,7 @@
     <title>ex5</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
-        .warp {
+        .wrap {
             width: 700px;
             height: 700px;
             overflow: hidden;
@@ -16,7 +16,7 @@
             position: relative;
         }
         
-        ul.img-warp {
+        ul.img-wrap {
             display: flex;
             list-style: none;
             padding-left: 0;
@@ -31,7 +31,7 @@
             height: 100%;
         }
         
-        .img-warp img {
+        .img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -48,10 +48,10 @@
         
         .slider-dots li {
             width: 60px;
-            height: 12px;
+            height: 10px;
             background: rgba(255, 255, 255, 0.5);
-            border-radius: 6px;
-            border: 2px solid rgb(255, 255, 255, 0.9);
+            border-radius: 5px;
+            /* border: 2px solid rgb(255, 255, 255, 0.9); */
             margin: 0 12px;
         }
     </style>
@@ -60,8 +60,8 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="warp">
-                <ul class="img-warp">
+            <div class="wrap">
+                <ul class="img-wrap">
                     <li><img src="./img/img1.png" alt=""></li>
                     <li><img src="./img/img2.png" alt=""></li>
                     <li><img src="./img/img3.png" alt=""></li>
@@ -99,13 +99,13 @@
                 .css('background', 'rgba(255, 255, 255, 0.5)')
 
             //ES5
-            // $('.img-warp')
+            // $('.img-wrap')
             //     .css('transform', 'translateX(' + positionX + ')')
 
             // ES6 樣板字串
             // 1.把字串原本的單引號(或雙引號) 改成使用反引號(`)
             // 2.把我們想要把我們想要放變數的地方 用${}
-            $('.img-warp')
+            $('.img-wrap')
                 .css('transform', `translateX(${positionX})`)
         })
     </script>
