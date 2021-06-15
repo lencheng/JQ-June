@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1-2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container  mt-5">
+        <div class="row">
+            <ul>
+                <li>點擊 checkbox 後讓整行 highlight</li>
+                <li>用 :checkbox 選擇上層元素</li>
+            </ul>
+            <table class="table table-bordered">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>AAA</td>
+                    <td>0912345678</td>
+                    <td>AAA@aaa.com</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>BBB</td>
+                    <td>0912345678</td>
+                    <td>BBB@bbb.com</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>CCC</td>
+                    <td>0912345678</td>
+                    <td>CCC@ccc.com</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>DDD</td>
+                    <td>0912345678</td>
+                    <td>DDD@ddd.com</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('input').click(function() {
+            // $(this)
+            //     .closest('tr')
+            //     .css('background', 'white');
+            // if (this.checked) {
+            //     $(this)
+            //         .closest('tr')
+            //         .css("background", "lightblue");
+            // }
+
+            // console.log('$(this).attr("checked"):', $(this).attr("checked"));
+            // console.log('$(this).prop("checked"):', $(this).prop("checked"));
+
+            if ($(this).prop("checked")) {
+                $(this)
+                    .closest('tr')
+                    .css("background", "lightblue");
+            } else {
+                $(this)
+                    .closest('tr')
+                    .css('background', 'white');
+            }
+        });
+    </script>
+</body>
+
+</html>
