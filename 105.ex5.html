@@ -7,21 +7,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex5</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
+    <style>
+        .warp {
+            width: 700px;
+            height: 700px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        ul.img-warp {
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+            width: 3500px;
+            height: 100%;
+            overflow: hidden;
+            transform: translateX(-40%);
+            transition: 0.5s;
+        }
+        
+        li {
+            height: 100%;
+        }
+        
+        .img-warp img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slider-dots {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 20px auto;
+        }
+        
+        .slider-dots li {
+            width: 60px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+            border: 2px solid rgb(255, 255, 255, 0.9);
+            margin: 0 12px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container mt-5">
         <div class="row">
+            <div class="warp">
+                <ul class="img-warp">
+                    <li><img src="./img/img1.png" alt=""></li>
+                    <li><img src="./img/img2.png" alt=""></li>
+                    <li><img src="./img/img3.png" alt=""></li>
+                    <li><img src="./img/img4.png" alt=""></li>
+                    <li><img src="./img/img5.png" alt=""></li>
+                </ul>
+                <ul class="list-unstyled slider-dots">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="row">
             <button class="btn btn-light mr-1"></button>
             <button class="btn btn-light mr-1"></button>
             <button class="btn btn-light mr-1"></button>
             <button class="btn btn-light mr-1"></button>
             <button class="btn btn-light"></button>
-        </div>
+        </div> -->
     </div>
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
+        $('.slider-dots li').click(function() {
+            // console.log('hi');
+            // console.log('li index:', $(this).index() * -700 + 'px');
+            const positionX = $(this).index() * -700 + 'px';
+            console.log(positionX);
+            // 確認positionX的值
+            $(this)
+                .css('background', 'rgba(255, 255, 255, 0.9)')
+                .siblings()
+                .css('background', 'rgba(255, 255, 255, 0.5)')
+
+            //ES5
+            // $('.img-warp')
+            //     .css('transform', 'translateX(' + positionX + ')')
+
+            // ES6 樣板字串
+            // 1.把字串原本的單引號(或雙引號) 改成使用反引號(`)
+            // 2.把我們想要把我們想要放變數的地方 用${}
+            $('.img-warp')
+                .css('transform', `translateX(${positionX})`)
+        })
     </script>
 </body>
 
