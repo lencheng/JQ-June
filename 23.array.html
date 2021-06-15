@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+
+<body>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        const myArray = ["第零個資料", "第一個資料", "第二個資料", "第三個資料", "第四個資料"];
+        console.log('myArray:', myArray);
+        console.log('myArray[0]:', myArray[0]);
+        console.log('myArray[1]:', myArray[1]);
+
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義'],
+            ['蘆洲', '三重', '新店'],
+        ];
+        console.log('districtArray:', districtArray);
+        console.log('districtArray[0]:', districtArray[0]);
+        console.log('districtArray[0][0]:', districtArray[0][0]);
+        console.log('districtArray[1][1]:', districtArray[1][1]);
+
+        //  資料有幾筆 就會執行幾次
+        districtArray.forEach(function(element) {
+            console.log('element:', element);
+            element.forEach(function(item) {
+                console.log('item:', item);
+            });
+        });
+
+        // districtArray.forEach(element => {
+
+        // });
+    </script>
+</body>
+
+</html>

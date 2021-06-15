@@ -115,6 +115,7 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
         let nowPage = 0;
+        changePage();
         $('.slider-dots li').click(function() {
             // console.log('hi');
             // console.log('li index:', $(this).index() * -700 + 'px');
@@ -122,10 +123,11 @@
             // const positionX = $(this).index() * -700 + 'px';
             // console.log(positionX);
             // 確認positionX的值
-            $(this)
-                .css('background', 'rgba(255, 255, 255, 0.9)')
-                .siblings()
-                .css('background', 'rgba(255, 255, 255, 0.5)')
+
+            // $(this)
+            //     .css('background', 'rgba(255, 255, 255, 0.9)')
+            //     .siblings()
+            //     .css('background', 'rgba(255, 255, 255, 0.5)')
 
             //ES5
             // $('.img-wrap')
@@ -171,8 +173,18 @@
             changePage();
         })
 
+        // $('.slider-dots li').eq(nowPage)
+        //     .css('background', 'rgba(255, 255, 255, 0.9)')
+
         function changePage() {
-            // console.log(nowPage);
+            // 改點
+            $('.slider-dots li').eq(nowPage)
+                .css('background', 'rgba(255, 255, 255, 0.9)')
+                .siblings()
+                .css('background', 'rgba(255, 255, 255, 0.5)')
+                // console.log(nowPage);
+
+            // 改圖
             const positionX = nowPage * -700;
             $('.img-wrap')
                 .css('transform', `translateX(${positionX}px)`)

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <form action="">
+                <div class="form-row">
+                    <div class="form-group">
+                        <select name="city" id="city" class="form-control">
+                            <option value="0">基隆</option>
+                            <option value="1">台北</option>
+                            <option value="2">新北</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="district" id="district" class="form-control">
+                            <option value="0">七堵區</option>
+                            <option value="1">中正區</option>
+                            <option value="2">暖暖區</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義'],
+            ['蘆洲', '三重', '新店'],
+        ];
+
+        // 1. 當使用者改變city
+        $('#city').change(function() {
+            // console.log('hi', $(this).val());
+
+            // 2. 我們需要取得這個city區域的資料
+            const cityVal = $(this).val();
+            // console.log(districtArray[cityVal]);
+            const districtData = districtArray[cityVal];
+
+            // 3. 利用迴圈去改第二個select的option
+            // 先去選取DOM有幾個 再改資料
+            // JQuery 的迴圈是 .each
+            // $('#district option').each(function(index) {
+            //     // console.log('each:', $(this).text());
+            //     // console.log('index:', index);
+            //     // console.log(districtData[index]);
+            //     // 文字拿到後 修改下拉式選單的文字
+            //     $(this).text(districtData[index] + '區');
+            // });
+
+            // 方法二：
+            $(districtData).each(function(index) {
+                $('#district option').eq(index).text(districtData[index] + '區');
+            });
+        })
+    </script>
+</body>
+
+</html>
