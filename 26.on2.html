@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <button class="btn btn-info" id="clickMe">btn</button>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // 這裡用 JS 的 Object 來放多組資料
+        // Object 最外面用{}
+        // key:value
+        // 多組資料用 , 隔開
+        $('.btn').on({
+            click: function() {
+                console.log('click');
+            },
+            mouseenter: function() {
+                console.log('mouseenter');
+            },
+            mouseleave: function() {
+                console.log('mouseleave');
+            }
+
+        })
+    </script>
+</body>
+
+</html>

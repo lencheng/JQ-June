@@ -9,8 +9,8 @@
     <style>
         body {
             margin: 0;
-            height: 300vh;
-            transition: .5s;
+            height: 800vh;
+            transition: 1s;
         }
         
         .wrap {
@@ -27,19 +27,37 @@
             background-color: black;
         }
         
-        .img-wrap {
+        .img-wrap,
+        .img-wrap2,
+        .img-wrap3,
+        .img-wrap4,
+        .img-wrap5 {
             width: 200px;
             height: 200px;
             position: absolute;
             top: 200px;
-            left: 100px;
             overflow: hidden;
-            transform: translate(0, 200px);
-            transition: .3s;
+            transform: translateY(200px);
+            transition: .5s;
             opacity: 0;
         }
         
-        .img-wrap img {
+        .img-wrap2,
+        .img-wrap4 {
+            left: 100px;
+        }
+        
+        .img-wrap,
+        .img-wrap3,
+        .img-wrap5 {
+            right: 100px;
+        }
+        
+        .img-wrap img,
+        .img-wrap2 img,
+        .img-wrap3 img,
+        .img-wrap4 img,
+        .img-wrap5 img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -52,6 +70,18 @@
         <div class="box"></div>
         <div class="img-wrap">
             <img src="./img/img3.png" alt="">
+        </div>
+        <div class="img-wrap2">
+            <img src="./img/img1.png" alt="">
+        </div>
+        <div class="img-wrap3">
+            <img src="./img/img2.png" alt="">
+        </div>
+        <div class="img-wrap4">
+            <img src="./img/img4.png" alt="">
+        </div>
+        <div class="img-wrap5">
+            <img src="./img/img5.png" alt="">
         </div>
     </div>
     <script src="./js/jquery-3.6.0.js"></script>
@@ -67,23 +97,68 @@
 
             $('.box').css('width', percentage + '%');
 
-            if ($(window).scrollTop() > $(window).height() * 0.5 && $(window).scrollTop() <= $(window).height()) {
+            if ($(window).scrollTop() > $(window).height() * 1 && $(window).scrollTop() <= $(window).height() * 2) {
                 $('body')
                     .css('background-color', 'black')
                 $('.img-wrap')
-                    .css('transform', 'translate(0 , 0)')
+                    .css('transform', 'translateY(0)')
                     .css('opacity', '1')
-            } else if ($(window).scrollTop() > $(window).height() && $(window).scrollTop() <= $(window).height() * 1.5) {
+                $('.img-wrap2')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
+            } else if ($(window).scrollTop() > $(window).height() * 2 && $(window).scrollTop() <= $(window).height() * 3) {
                 $('body')
                     .css('background-color', 'pink')
                 $('.img-wrap')
-                    .css('transform', 'translate(0 ,0)')
-                $('.img-wrap img')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
+                $('.img-wrap2')
+                    .css('transform', 'translateY(0)')
+                    .css('opacity', '1')
+                $('.img-wrap3')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
+            } else if ($(window).scrollTop() > $(window).height() * 3 && $(window).scrollTop() <= $(window).height() * 4) {
+                $('body')
+                    .css('background-color', 'white')
+                $('.img-wrap2')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
+                $('.img-wrap3')
+                    .css('transform', 'translateY(0)')
+                    .css('opacity', '1')
+                $('.img-wrap4')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
+            } else if ($(window).scrollTop() > $(window).height() * 4 && $(window).scrollTop() <= $(window).height() * 5) {
+                $('body')
+                    .css('background-color', 'black')
+                $('.img-wrap3')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
+                $('.img-wrap4')
+                    .css('transform', 'translateY(0)')
+                    .css('opacity', '1')
+                $('.img-wrap5')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
+            } else if ($(window).scrollTop() > $(window).height() * 5 && $(window).scrollTop() <= $(window).height() * 6) {
+                $('body')
+                    .css('background-color', 'pink')
+                $('.img-wrap4')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
+                $('.img-wrap5')
+                    .css('transform', 'translateY(0)')
+                    .css('opacity', '1')
             } else {
                 $('body')
                     .css('background-color', 'white')
+                $('.img-wrap5')
+                    .css('transform', 'translateY(200px)')
+                    .css('opacity', '0')
                 $('.img-wrap')
-                    .css('transform', 'translate(0, 200px)')
+                    .css('transform', 'translateY(200px)')
                     .css('opacity', '0')
             }
         });
