@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            transition: .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.box').css('background-color', 'pink')
+        console.log('background-color:', $('.box').css('background-color'));
+        console.log('width:', $('.box').css('width'));
+        console.log('width:', parseInt($('.box').css('width')));
+        // parseInt()取純數字
+
+        var style = {
+            width: '210px',
+            height: '190px',
+            background: 'black'
+        }
+        var style2 = {
+            width: '200px',
+            height: '200px',
+            background: 'pink'
+        }
+        $('.box').hover(function() {
+            $('.box').css(style)
+        }, function() {
+            $('.box').css(style2)
+        });
+    </script>
+</body>
+
+</html>
