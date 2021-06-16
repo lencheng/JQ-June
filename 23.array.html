@@ -12,25 +12,25 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
         const myArray = ["第零個資料", "第一個資料", "第二個資料", "第三個資料", "第四個資料"];
-        console.log('myArray:', myArray);
-        console.log('myArray[0]:', myArray[0]);
-        console.log('myArray[1]:', myArray[1]);
+        // console.log('myArray:', myArray);
+        // console.log('myArray[0]:', myArray[0]);
+        // console.log('myArray[1]:', myArray[1]);
 
         let districtArray = [
             ['七堵', '中正', '暖暖'],
             ['中正', '大安', '信義'],
             ['蘆洲', '三重', '新店'],
         ];
-        console.log('districtArray:', districtArray);
-        console.log('districtArray[0]:', districtArray[0]);
-        console.log('districtArray[0][0]:', districtArray[0][0]);
-        console.log('districtArray[1][1]:', districtArray[1][1]);
+        // console.log('districtArray:', districtArray);
+        // console.log('districtArray[0]:', districtArray[0]);
+        // console.log('districtArray[0][0]:', districtArray[0][0]);
+        // console.log('districtArray[1][1]:', districtArray[1][1]);
 
         //  資料有幾筆 就會執行幾次
         districtArray.forEach(function(element) {
-            console.log('element:', element);
+            // console.log('element:', element);
             element.forEach(function(item) {
-                console.log('item:', item);
+                // console.log('item:', item);
             });
         });
 
@@ -39,10 +39,39 @@
         // });
 
         for (var i = 0; i < districtArray.length; i++) {
-            console.log('i:', districtArray[i]);
+            // console.log('i:', districtArray[i]);
             for (var j = 0; j < districtArray[i].length; j++) {
-                console.log('ij:', districtArray[i][j]);
+                // console.log('ij:', districtArray[i][j]);
             }
+        }
+
+        // 非同步
+        // JS 是單執行緒語言
+        // 如果中間被阻擋或有錯誤 後面就不會執行
+        // 在需要等待的時候 為了不阻礙執行流程 把這部分丟給瀏覽器提供的API
+        // 常見的 SetTimeout, SetInterval, Ajax...
+
+        setTimeout(() => {
+            // console.log('hi');
+        }, 3000);
+        // 等三秒 (3000)
+        // 這個秒數並不是絕對準確的
+        // 只能確定最少等幾秒 而不是等幾秒後就執行 (>=3000的意思)
+
+        // 主程式執行時間超過SetTimeout 必須等主程式執行完成 才會執行SetTimeout
+        for (var i = 0; i < 3; i++) {
+            setTimeout(() => { // API
+                console.log('var i:', i); // API
+            }, 100); // API
+        }
+        // ES5 閉包 
+        // 閉包創建一個封閉的環境 內部的變數會被鎖定在當時的數值
+
+        // ES6 直接用let解決 (ES5用var)
+        for (let i = 0; i < 3; i++) {
+            setTimeout(() => { // API
+                console.log('let i:', i); // API
+            }, 100); // API
         }
     </script>
 </body>
