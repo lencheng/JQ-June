@@ -68,34 +68,54 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
         $(document).on('keydown', function() {
-            if (event.which === 39) {
-                // console.log('right');
-                if (parseInt($('.box').css("left")) >= 700) {
-                    return
-                }
-                $('.box').css("left", "+=50")
-            }
-            if (event.which === 37) {
-                // console.log('left');
-                if (parseInt($('.box').css("left")) <= 0) {
-                    return
-                }
-                $('.box').css("left", "-=50")
-            }
-            if (event.which === 38) {
-                // console.log('up');
+            const goUp = () => {
                 if (parseInt($('.box').css("top")) <= 0) {
                     return
-                }
-                $('.box').css("top", "-=50")
+                };
+                $('.box').css("top", "-=50");
             }
-            if (event.which === 40) {
-                // console.log('down');
+            const goDown = () => {
                 if (parseInt($('.box').css("top")) >= 300) {
                     return
-                }
-                $('.box').css("top", "+=50")
+                };
+                $('.box').css("top", "+=50");
             }
+            const goLeft = () => {
+                if (parseInt($('.box').css("left")) <= 0) {
+                    return
+                };
+                $('.box').css("left", "-=50");
+            }
+            const goRight = () => {
+                if (parseInt($('.box').css("left")) >= 700) {
+                    return
+                };
+                $('.box').css("left", "+=50");
+            }
+            if (event.which === 38) {
+                goUp();
+            }
+            if (event.which === 40) {
+                goDown();
+            }
+            if (event.which === 37) {
+                goLeft();
+            }
+            if (event.which === 39) {
+                goRight();
+            }
+            $('#up').click(function() {
+                goUp();
+            });
+            $('#down').click(function() {
+                goDown();
+            });
+            $('#left').click(function() {
+                goLeft();
+            });
+            $('#right').click(function() {
+                goRight();
+            });
         });
         // document.addEventListener("keydown", function(event) {
         //     // console.log(event.which);
