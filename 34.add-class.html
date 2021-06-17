@@ -22,6 +22,19 @@
         .box.active {
             background-color: black;
         }
+        
+        .box2 {
+            width: 200px;
+            height: 200px;
+            transition: .5s;
+            background-color: pink;
+            opacity: .5;
+        }
+        
+        .box2.bb {
+            background-color: black;
+            opacity: .5;
+        }
     </style>
 </head>
 
@@ -35,6 +48,7 @@
         </div>
         <div class="row">
             <div class="box"></div>
+            <div class="box2"></div>
         </div>
     </div>
     <script src="./js/jquery-3.6.0.js"></script>
@@ -56,6 +70,13 @@
                 $('.box').removeClass('active');
             } else {
                 $('.box').addClass('active');
+            }
+        })
+        $('#hasClass').click(function() {
+            if ($('.box2').hasClass('bb')) {
+                $('.box2').removeClass('bb');
+            } else {
+                $('.box2').addClass('bb');
             }
         })
     </script>
