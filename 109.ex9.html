@@ -36,7 +36,10 @@
 
 <body>
     <div class="container">
-        <div class="row my-5 justify-content-end">
+        <div class="mt-5 text-center">
+            <span>EX9 利用按鈕切換文字大小</span>
+        </div>
+        <div class="row justify-content-end">
             <button class="btn btn-dark mr-2" id="btn-s">S</button>
             <button class="btn btn-dark mr-2" id="btn-m">M</button>
             <button class="btn btn-dark mr-2" id="btn-l">L</button>
@@ -55,6 +58,11 @@
             } else if ($('h2').hasClass('l')) {
                 $('h2').removeClass('l');
             }
+            if ($('p').hasClass('m')) {
+                $('p').removeClass('m');
+            } else if ($('p').hasClass('l')) {
+                $('p').removeClass('l');
+            }
         })
         $('#btn-m').click(function() {
             if ($('h2').hasClass('l')) {
@@ -63,6 +71,12 @@
             } else {
                 $('h2').addClass('m');
             }
+            if ($('p').hasClass('l')) {
+                $('p').removeClass('l');
+                $('p').addClass('m');
+            } else {
+                $('p').addClass('m');
+            }
         })
         $('#btn-l').click(function() {
             if ($('h2').hasClass('m')) {
@@ -70,6 +84,12 @@
                 $('h2').addClass('l');
             } else {
                 $('h2').addClass('l');
+            }
+            if ($('p').hasClass('m')) {
+                $('p').removeClass('m');
+                $('p').addClass('l');
+            } else {
+                $('p').addClass('l');
             }
         })
     </script>

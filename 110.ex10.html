@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .box,
+        .box2 {
+            width: 500px;
+            height: 500px;
+            border-radius: 5%;
+        }
+        
+        .box {
+            background: linear-gradient(110deg, #dd5e89, #f7bb97);
+        }
+        
+        .box.style-1 {
+            background: linear-gradient(110deg, #dd5e89, #f7bb97);
+        }
+        
+        .box.style-2 {
+            background: linear-gradient(110deg, #2c3e50, #fd746c);
+        }
+        
+        .box.style-3 {
+            background: linear-gradient(110deg, #ffc3a0, #ffafbd);
+        }
+        
+        .box2 {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .box3,
+        .box4,
+        .box5 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px;
+            float: left;
+        }
+        
+        .box3 {
+            background: linear-gradient(110deg, #dd5e89, #f7bb97);
+        }
+        
+        .box4 {
+            background: linear-gradient(110deg, #2c3e50, #fd746c);
+        }
+        
+        .box5 {
+            background: linear-gradient(110deg, #ffafbd, #ffc3a0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="my-5 text-center">
+            <span>EX10 效果: 點擊顏色圓型，左邊出現相同顏色</span>
+        </div>
+        <div class="row justify-content-between">
+            <div class="box">
+
+            </div>
+            <div class="box2">
+                <div class="box3" id="style-1"></div>
+                <div class="box4" id="style-2"></div>
+                <div class="box5" id="style-3"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('#style-1').click(function() {
+            console.log('style');
+            $('.box')
+                .removeClass('style-2')
+                .removeClass('style-3')
+                .addClass('style-1');
+
+        })
+        $('#style-2').click(function() {
+            $('.box')
+                .removeClass('style-1')
+                .removeClass('style-3')
+                .addClass('style-2');
+
+        })
+        $('#style-3').click(function() {
+            $('.box')
+                .removeClass('style-1')
+                .removeClass('style-2')
+                .addClass('style-3');
+
+        })
+    </script>
+</body>
+
+</html>
