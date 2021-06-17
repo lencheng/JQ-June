@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array push</title>
+</head>
+
+<body>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        const myArray = [1, 2, 3];
+        console.log('myArray:', myArray);
+
+        // pop() 從後面取走一個資料
+        const myPop = myArray.pop();
+        console.log('myPop:', myPop);
+        console.log('myArray after pop():', myArray);
+
+        const myPop2 = myArray.pop();
+        console.log('myPop2:', myPop2);
+        console.log('myArray after pop():', myArray);
+
+        // push(4) 從後面加上一個資料
+        myArray.push(4);
+        console.log('myArray after push(4):', myArray);
+
+        // unshift() 從前面加上一個資料
+        myArray.unshift(5);
+        console.log('myArray after unshift(5):', myArray);
+
+        // shift() 從前面取走一個資料
+        const myShift = myArray.shift();
+        console.log('myShift:', myShift);
+        console.log('myArray after shift():', myArray);
+    </script>
+</body>
+
+</html>

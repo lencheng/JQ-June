@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add class</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .row {
+            justify-content: center;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            transition: .5s;
+            background-color: pink;
+        }
+        
+        .box.active {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row my-5">
+            <button class="btn btn-dark mr-2" id="addClass">Add Class</button>
+            <button class="btn btn-dark mr-2" id="removeClass">Remove Class</button>
+            <button class="btn btn-dark mr-2" id="toggleClass">Toggle Class</button>
+            <button class="btn btn-dark" id="hasClass">Has Class</button>
+        </div>
+        <div class="row">
+            <div class="box"></div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('#addClass').click(function() {
+            $('.box').addClass('active');
+        })
+
+        $('#removeClass').click(function() {
+            $('.box').removeClass('active');
+        })
+
+        $('#toggleClass').click(function() {
+            $('.box').toggleClass('active');
+        })
+
+        $('#hasClass').click(function() {
+            if ($('.box').hasClass('active')) {
+                $('.box').removeClass('active');
+            } else {
+                $('.box').addClass('active');
+            }
+        })
+    </script>
+</body>
+
+</html>
