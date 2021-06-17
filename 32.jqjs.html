@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq vs js</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <button class="btn btn-info" id="clickMe">Click Me</button>
+            <button class="btn btn-info" id="checkOut">Check Out</button>
+        </div>
+        <div class="row mt-5">
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // getElement vs querySelector 的差異
+        // 1.資料型態不一樣 HTMLCollection vs NodeList
+        // 2.動態後新增的節點 HTMLCollection會變動 NodeList不會變動 只會停在選取時的狀態
+        const htmlCollection = document.getElementsByTagName('li');
+        const querySelector = document.querySelectorAll('li')
+
+        // 原生JS
+        for (let i = 0; i < htmlCollection.length; i++) {
+            console.log('i:', htmlCollection[i]);
+            htmlCollection[i].addEventListener('click', function() {}, false);
+        }
+
+        // JQuery
+        $('li').click(function() {
+                console.log('hi');
+            })
+            // let liIndex = 3;
+            // $('#clickMe').on('click', function() {
+            //     $('ul').append(`<li>item ${liIndex}</li>`)
+            //     liIndex++;
+            // });
+        $('#checkOut').on('click', function() {
+            console.log('htmlCollection:', htmlCollection);
+            console.log('querySelector:', querySelector);
+        });
+    </script>
+</body>
+
+</html>
