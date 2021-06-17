@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9-1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        h2 {
+            font-size: 48px;
+        }
+        
+        h2.m {
+            font-size: 60px;
+        }
+        
+        h2.l {
+            font-size: 72px;
+        }
+        
+        p {
+            font-size: 16px;
+        }
+        
+        p.m {
+            font-size: 20px;
+        }
+        
+        p.l {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mt-5 text-center">
+            <span>EX9 利用按鈕切換文字大小</span>
+        </div>
+        <div class="row justify-content-end">
+            <button class="btn btn-dark mr-2" id="btn-s">S</button>
+            <button class="btn btn-dark mr-2" id="btn-m">M</button>
+            <button class="btn btn-dark mr-2" id="btn-l">L</button>
+        </div>
+        <div class="row">
+            <h2>JQ</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor deleniti ad dignissimos. Voluptatem molestias quaerat et molestiae deleniti blanditiis commodi? Ab, perspiciatis in. Ipsam, neque officiis quasi dolores alias velit?</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem iusto reiciendis incidunt? Consequuntur consectetur atque sint tenetur libero. Quam animi inventore minus numquam porro illum earum in eius accusamus maxime!</p>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('#btn-s').click(function() {
+            $('h2')
+                .removeClass('m')
+                .removeClass('l');
+            $('p')
+                .removeClass('m')
+                .removeClass('l');
+        })
+        $('#btn-m').click(function() {
+            $('h2')
+                .removeClass('l')
+                .addClass('m');
+            $('p')
+                .removeClass('l')
+                .addClass('m');
+        })
+        $('#btn-l').click(function() {
+            $('h2')
+                .removeClass('m')
+                .addClass('l');
+            $('p')
+                .removeClass('m')
+                .addClass('l');
+        })
+    </script>
+</body>
+
+</html>
