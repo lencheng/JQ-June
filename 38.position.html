@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+        
+        .section {
+            width: 1000px;
+            height: 1000px;
+            background-color: darkred;
+            padding: 200px;
+            position: relative;
+        }
+        
+        .wrap {
+            width: 500px;
+            height: 500px;
+            background-color: salmon;
+            padding: 50px;
+            /* position: relative; */
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: 1s;
+            position: absolute;
+            top: 210px;
+            left: 210px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="wrap">
+            <div class="box"></div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        console.log('box position:', $('.box').position());
+        const boxTop = $('.box').position().top;
+        const boxLeft = $('.box').position().left;
+        $('.box').click(function() {
+            $('.box').css({
+                top: `${boxTop +Math.random()* 100}px`,
+                left: `${boxLeft+Math.random()* 100}px`
+            })
+        });
+    </script>
+</body>
+
+</html>

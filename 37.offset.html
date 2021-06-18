@@ -11,14 +11,13 @@
             margin: 0;
         }
         
-        .header {
+        .header,
+        .box {
             height: 2000px;
             background-color: pink;
         }
         
         .box {
-            height: 1000px;
-            background-color: pink;
             transition: 2s;
         }
     </style>
@@ -30,6 +29,8 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
         console.log('box offset:', $('.box').offset());
+        console.log('box offset top:', $('.box').offset().top);
+        console.log('box offset left:', $('.box').offset().left);
         $(window).scroll(function() {
             if ($(window).scrollTop() > $('.box').offset().top - $(window).height() + 300) {
                 $('.box').css('background-color', 'black');
