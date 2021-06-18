@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(204, 190, 190);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        function getRandomInt() {
+            const myRandom = Math.random();
+            return Math.floor(myRandom * 256);
+        }
+        $('.box').css('background-color', `rgb(${getRandomInt()},${getRandomInt()},${getRandomInt()})`)
+    </script>
+</body>
+
+</html>
