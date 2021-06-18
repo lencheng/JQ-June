@@ -8,7 +8,7 @@
     <title>ex9-2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
-        h2.s {
+        /* h2.s {
             font-size: 48px;
         }
         
@@ -18,18 +18,18 @@
         
         h2.l {
             font-size: 72px;
+        } */
+        
+        .fontS {
+            font-size: .8rem;
         }
         
-        p.s {
-            font-size: 16px;
+        .fontM {
+            font-size: 1rem;
         }
         
-        p.m {
-            font-size: 20px;
-        }
-        
-        p.l {
-            font-size: 24px;
+        .fontL {
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -53,75 +53,29 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
         $('.btn').click(function() {
-                console.log('this:', $(this).is(":contains('S')"));
-                if ($(this).is(":contains('S')")) {
-                    $('h2')
-                        .removeClass('m')
-                        .removeClass('l')
-                        .addClass('s');
-                    $('p')
-                        .removeClass('m')
-                        .removeClass('l')
-                        .addClass('s');;
-                    $('.btn')
-                        .removeClass('active')
-                    $(this)
-                        .addClass('active');
-                }
-                if ($(this).is(":contains('M')")) {
-                    $('h2')
-                        .removeClass('s')
-                        .removeClass('l')
-                        .addClass('m');
-                    $('p')
-                        .removeClass('s')
-                        .removeClass('l')
-                        .addClass('m');
-                    $('.btn')
-                        .removeClass('active')
-                    $(this)
-                        .addClass('active');
-                }
-                if ($(this).is(":contains('L')")) {
-                    $('h2')
-                        .removeClass('s')
-                        .removeClass('m')
-                        .addClass('l');
-                    $('p')
-                        .removeClass('s')
-                        .removeClass('m')
-                        .addClass('l');
-                    $('.btn')
-                        .removeClass('active')
-                    $(this)
-                        .addClass('active');
-                }
-
-            })
-            // $('#btn-s').click(function() {
-            //     $('h2')
-            //         .removeClass('m')
-            //         .removeClass('l');
-            //     $('p')
-            //         .removeClass('m')
-            //         .removeClass('l');
-            // })
-            // $('#btn-m').click(function() {
-            //     $('h2')
-            //         .removeClass('l')
-            //         .addClass('m');
-            //     $('p')
-            //         .removeClass('l')
-            //         .addClass('m');
-            // })
-            // $('#btn-l').click(function() {
-            //     $('h2')
-            //         .removeClass('m')
-            //         .addClass('l');
-            //     $('p')
-            //         .removeClass('m')
-            //         .addClass('l');
-            // })
+            // console.log('this:', $(this).is(":contains('S')"));
+            if ($(this).is(":contains('S')")) {
+                $('p')
+                    .removeClass()
+                    .addClass('fontS');
+                $('.btn').removeClass('active');
+                $(this).addClass('active');
+            }
+            if ($(this).is(":contains('M')")) {
+                $('p')
+                    .removeClass()
+                    .addClass('fontM');
+                $('.btn').removeClass('active');
+                $(this).addClass('active');
+            }
+            if ($(this).is(":contains('L')")) {
+                $('p')
+                    .removeClass()
+                    .addClass('fontL');
+                $('.btn').removeClass('active');
+                $(this).addClass('active');
+            }
+        });
     </script>
 </body>
 
