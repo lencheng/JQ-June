@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11 page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+        body {
+            margin: 0;
+            background-color: #eee;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .banner {
+            height: calc(100vh - 100px);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .banner ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            height: 100%;
+            width: 500%;
+            transition: 1s;
+        }
+        
+        .banner ul li {
+            height: 100%;
+        }
+        
+        .banner ul li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .left-arrow-area,
+        .right-arrow-area {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            background-color: rgba(136, 136, 136, 0.534);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .left-arrow-area {
+            left: 0;
+        }
+        
+        .right-arrow-area {
+            right: 0;
+        }
+        
+        .bx {
+            color: steelblue;
+            font-size: 1.5rem;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: rgb(164, 198, 199);
+            padding: 0 20px;
+            height: 100px;
+        }
+        
+        nav p {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+            color: steelblue;
+        }
+        
+        .links {
+            border-left: 2px solid steelblue;
+            padding: 0 0 0 20px;
+            margin-left: 30px;
+        }
+        
+        .links a {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 1.1rem;
+            color: steelblue;
+            margin: 10px 20px;
+        }
+        
+        .icons {
+            margin-left: auto;
+        }
+        
+        .icons i {
+            margin: 10px;
+        }
+        
+        .intro {
+            margin-top: 100px;
+        }
+        
+        .intro .title {
+            font-size: 5rem;
+        }
+        
+        .intro .title::after {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 30px;
+            margin-top: -40px;
+            background-color: rgb(164, 198, 199);
+        }
+        
+        .intro-wrap {
+            margin: 300px 0;
+            position: relative;
+            transform: translateY(200px);
+            opacity: 0;
+            transition: 1s;
+        }
+        
+        .intro-wrap.show {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        
+        .intro-wrap p {
+            width: 20%;
+            background-color: rgba(164, 198, 199, 0.6);
+            padding: 30px;
+            border: 2px dashed steelblue;
+            position: absolute;
+            right: 100px;
+            top: -150px;
+        }
+        
+        .intro-wrap:nth-child(2n-1) p {
+            left: 100px;
+        }
+        
+        .intro-wrap img {
+            width: 80%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .intro-wrap:nth-child(2n-1) img {
+            margin-left: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div class="banner">
+            <ul>
+                <li><img src="./img/img1-1.jpg" alt=""></li>
+                <li><img src="./img/img1-2.jpg" alt=""></li>
+                <li><img src="./img/img2-2.jpg" alt=""></li>
+                <li><img src="./img/img3-2.jpg" alt=""></li>
+                <li><img src="./img/img3-1.jpg" alt=""></li>
+            </ul>
+            <div class="left-arrow-area">
+                <i class='bx bx-left-arrow-alt'></i>
+            </div>
+            <div class="right-arrow-area">
+                <i class='bx bx-right-arrow-alt'></i>
+            </div>
+        </div>
+    </section>
+    <nav>
+        <p>June21</p>
+        <div class="links">
+            <a href="#">ALL</a>
+            <a href="#">NEW</a>
+            <a href="#">SALE</a>
+            <a href="#">FEATURES</a>
+            <a href="#">ABOUT</a>
+        </div>
+        <div class="icons">
+            <i class='bx bxs-user'></i>
+            <i class='bx bxs-heart'></i>
+            <i class='bx bxs-cart'></i>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="intro">
+                    <h2 class="title">Tokyo</h2>
+                    <div class="intro-wrap">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore ad itaque error est perspiciatis deserunt odio voluptatem aspernatur soluta alias? In dignissimos pariatur eum delectus inventore praesentium eaque ducimus nobis.</p>
+                        <img src="./img/img1-3.jpg" alt="">
+                    </div>
+                    <div class="intro-wrap">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, natus libero corrupti corporis molestiae quidem, accusamus ea maxime esse, commodi temporibus tempore blanditiis minima? Corporis veniam sint magni! Impedit, optio.</p>
+                        <img src="./img/img1-4.jpg" alt="">
+                    </div>
+                    <div class="intro-wrap">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, rerum impedit qui quidem vel animi, ut recusandae, vero magni cum iste placeat deleniti ipsam ipsa corrupti atque facere adipisci est!</p>
+                        <img src="./img/img3-3.jpg" alt="">
+                    </div>
+                    <div class="intro-wrap">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempore quidem sunt suscipit, tempora sapiente adipisci tenetur id ab distinctio? Sequi tempore ab nisi tempora omnis laborum nobis eius harum.</p>
+                        <img src="./img/img3-4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        let nowPage = 0;
+
+        $('.left-arrow-area').click(function() {
+            if (nowPage === 0) return;
+            nowPage = nowPage - 1;
+            changePage();
+        });
+
+        $('.right-arrow-area').click(function() {
+            if (nowPage === 4) return;
+            nowPage = nowPage + 1;
+            changePage();
+        });
+
+        function changePage() {
+            // 改變圖片
+            const bannerWidth = $('.banner').width();
+            const positionX = nowPage * -1 * bannerWidth;
+            $('.banner ul').css('transform', `translateX(${positionX}px)`);
+        }
+        $(window).scroll(function() {
+            $('.intro-wrap').each(function(index, item) {
+                if ($(window).scrollTop() + $(window).height() >= $(item).offset().top) {
+                    $(item).addClass('show');
+                } else {
+                    $(item).removeClass('show');
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
