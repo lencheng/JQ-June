@@ -51,7 +51,7 @@
             top: 0;
             bottom: 0;
             width: 80px;
-            background-color: rgba(136, 136, 136, 0.534);
+            /* background-color: rgba(136, 136, 136, 0.534); */
             cursor: pointer;
             display: flex;
             justify-content: center;
@@ -79,10 +79,16 @@
             height: 100px;
         }
         
+        .nav.fixed {
+            position: fixed;
+            top: 0;
+            z-index: 999;
+        }
+        
         nav p {
             font-family: 'Noto Sans TC', sans-serif;
             font-size: 3rem;
-            margin: 0;
+            margin: 0 50px;
             color: steelblue;
         }
         
@@ -101,6 +107,7 @@
         
         .icons {
             margin-left: auto;
+            margin-right: 50px;
         }
         
         .icons i {
@@ -182,7 +189,7 @@
             </div>
         </div>
     </section>
-    <nav>
+    <nav class="nav">
         <p>June21</p>
         <div class="links">
             <a href="#">ALL</a>
@@ -244,6 +251,20 @@
             const positionX = nowPage * -1 * bannerWidth;
             $('.banner ul').css('transform', `translateX(${positionX}px)`);
         }
+
+        const navTop = $('nav').offset().top;
+        $(window).scroll(function() {
+            console.log($(window).scrollTop(), navTop);
+            // console.log();
+            if ($(window).scrollTop() >= navTop) {
+                $('.nav')
+                    .addClass('fixed');
+            } else {
+                $('.nav')
+                    .css('position', 'sticky');
+            }
+        })
+
         $(window).scroll(function() {
             $('.intro-wrap').each(function(index, item) {
                 if ($(window).scrollTop() + $(window).height() >= $(item).offset().top) {
