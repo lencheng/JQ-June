@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .img-demo {
+            height: 600px;
+        }
+        
+        .img-demo img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+        
+        .img-row img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <div class="img-demo">
+                    <img src="./img/img3.png" alt="">
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <div class="img-wrap d-flex">
+                    <div class="img-row">
+                        <img src="./img/img3.png" data-imgindex=0 alt="">
+                    </div>
+                    <div class="img-row">
+                        <img src="./img/img1.png" data-imgindex=1 alt="">
+                    </div>
+                    <div class="img-row">
+                        <img src="./img/img2.png" data-imgindex=2 alt="">
+                    </div>
+                    <div class="img-row">
+                        <img src="./img/img4.png" data-imgindex=3 alt="">
+                    </div>
+                    <div class="img-row">
+                        <img src="./img/img5.png" data-imgindex=4 alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.img-row img').click(function() {
+            console.log('this:', $(this));
+            console.log('this src:', $(this).attr('src'));
+            console.log('this data-imgindex:', $(this).data('imgindex'));
+            $('.img-demo img').attr('src', $(this).attr('src'));
+        });
+    </script>
+</body>
+
+</html>

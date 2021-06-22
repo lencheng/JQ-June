@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html text</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        span {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <button class="btn btn-info" id="getText">get text</button>
+        <button class="btn btn-info" id="getHtml">get html</button>
+    </div>
+    <h1 id="sample">Hello <span>World</span></h1>
+    <h1 id="result"></h1>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // 取值
+        $('#getText').click(function() {
+            $('#result').text($('#sample').text())
+        })
+        $('#getHtml').click(function() {
+            $('#result').html($('#sample').html())
+        })
+    </script>
+</body>
+
+</html>
