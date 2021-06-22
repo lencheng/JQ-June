@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mask</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .mask {
+            flex-wrap: wrap;
+        }
+        
+        .card {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mask d-flex mt-5">
+            <!-- <div class="col-3">
+            <div class="card">
+                <img src="./img/img1.png" alt="">
+                <div class="card-body">
+                    <h5>XXXX</h5>
+                    <div class="d-flex justify-content-between">
+                        <p>$1234</p>
+                        <div class="btn-wrap">
+                            <button class="btn btn-info"><i class='bx bxs-heart'></i></button>
+                            <button class="btn btn-info"><i class='bx bxs-cart' ></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $.ajax({
+                method: "GET",
+                url: "./mask.json",
+                dataType: "json"
+            })
+            .done(function(data) {
+                console.log("Data Saved: ", data);
+                data.forEach(function(item) {
+                    $('.mask').append(`
+                    <div class="col-3">
+                        <div class="card">
+                            <img src="./img/${item.image}" alt="">
+                            <div class="card-body">
+                                <h5>${item.name}</h5>
+                                <div class="d-flex justify-content-between">
+                                    <p>$${item.price}</p>
+                                    <div class="btn-wrap">
+                                        <button class="btn btn-info"><i class='bx bxs-heart'></i></button>
+                                        <button class="btn btn-info"><i class='bx bxs-cart' ></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `)
+
+                });
+            });
+    </script>
+</body>
+
+</html>
